@@ -2,20 +2,39 @@ import React from 'react';
 import * as F from './styles';
 import { useState } from "react"
 
-const Form = () => {
+
+const Form = ({handleAdd, transactionList, setTransactionList}) => {
     const [desc, setDesc] = useState([]);
     const [amount, setAmount] = useState([]);
     const [isExpense, setIsExpense] = useState(false);
 
+    const generateID = () => {
+        Math.round(Math.random() * 1000);
+    };
+
+    
     const handleSave = () => {
         if(!desc || !amount){
-            alert('O valor deve ser positivo!');
+            alert('Informe a descrição e o valor!');
             return;
         } else if( amount < 1 ) {
             alert('O valor deve ser positivo');
             return;
         }
-    }
+    
+
+        const transaction = {
+            id:generateID(),
+            desc:desc,
+            amount:amount,
+            expense:isExpense,
+        };
+
+        handleAdd(transaction);
+
+        setDesc("");
+        setAmount("");
+    };
 
   return (
     <F.Container>
@@ -44,4 +63,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default Form;

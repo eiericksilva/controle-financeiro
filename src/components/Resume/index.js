@@ -1,4 +1,4 @@
-import styled from "styled-components"
+/* import styled from "styled-components" */
 import * as R from "./styles"
 import { 
   FaRegArrowAltCircleUp, 
@@ -8,12 +8,12 @@ import {
 import React from 'react'
 import ResumeItem from "../ResumeItem"
 
-export const Resume = () => {
+export const Resume = ({income, expense, total}) => {
   return (
     <R.Container>
-      <ResumeItem title='Entradas' Icon={FaRegArrowAltCircleUp} value="1000"/>
-      <ResumeItem title='Saídas' Icon={FaRegArrowAltCircleDown} value="1000"/>
-      <ResumeItem title='Total' Icon={FaDollarSign} value="1000"/>
+      <ResumeItem title='Entradas' Icon={FaRegArrowAltCircleUp} value={income}/>
+      <ResumeItem title='Saídas' Icon={FaRegArrowAltCircleDown} value={expense}/>
+      <ResumeItem title='Total' Icon={FaDollarSign} value={total}/>
     </R.Container>
   )
 }
