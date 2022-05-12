@@ -9,6 +9,16 @@ export const Container = styled.div`
     padding: 5px 15px;
     width: 30%;
 
+        &:hover {
+            cursor: pointer;
+            background-color: #8fa4ba ;
+            
+            svg {
+                width:30px;
+                height:30px;
+            }
+        }
+
     //responsive
     
     @media(max-width: 750px) {

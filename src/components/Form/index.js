@@ -63,7 +63,7 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
           />
           <C.Label htmlFor="rExpenses">Saída</C.Label>
         </C.RadioGroup>
-        <C.Button onClick={handleSave}>ADICIONAR</C.Button>
+        <C.Button onClick={handleSave}>Adicionar</C.Button>
       </C.Container>
       <Grid itens={transactionsList} setItens={setTransactionsList} />
     </>
